@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log('constructor')
+    console.log('---------------')
+    this.state ={
+      favoritecolor:'green'
+    }
+  }
+
+  // static getDerivedStateFromProps(props,state){
+  //   console.log('getDerivedStateFromProps')
+  //   console.log(props,state)
+  //   console.log('---------------')
+  //   return{
+  //     favoritecolor: props.favcol //จาก index.js
+  //   }
+  // }
+
+  componentDidMount(){
+    console.log('componentDidMount')
+    console.log('---------------')
+    setTimeout(()=>{
+      this.setState({favoritecolor:'yellow'});
+    },3000);
+  }
+
+  render(){
+    console.log('render')
+    console.log('---------------')
+    return (
+    <>
+      <h1>My favorite color is {this.state.favoritecolor}</h1>
+    </>
+    );
+  }
 }
 
 export default App;
