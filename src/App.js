@@ -74,6 +74,7 @@ class App extends Component {
       {/* <button onClick={this.changeColor}>Change color</button> */}
       <div id="div1"></div>
       <div id="div2"></div>
+      
     </>
     );
   }
